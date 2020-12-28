@@ -4,28 +4,50 @@
     <meta charset="utf-8" />
     <title>Duna Emulator</title>
   </head>
-  <body>
+  <body style="display: flex; flex-direction: column">
     <noscript>Duna requires Javascript and WebAssembly to run.</noscript>
     <script src="./bootstrap.js"></script>
-    <div>
-      <textarea
-        id="code"
-        rows="20"
-        cols="80"
-        placeholder="your code here"
-      ></textarea>
-      <textarea
-        id="stdout"
-        rows="20"
-        cols="40"
-        disabled
-        placeholder="console output appears here"
-      ></textarea>
-      <p>Program exited with code <span id="exit-code">--</span></p>
-    </div>
-    <!-- TODO replace this with assemble/simulate buttons -->
-    <div>
-      <button id="go">Go!</button>
-    </div>
+    <!-- Putting the JS import first allows us to override 3rd-party styles after -->
+    <h2>Duna RV32 (very alpha)</h2>
+    <style type="text/css">
+      html {
+        font-family: "Menlo", monospace, sans-serif;
+      }
+      .CodeMirror {
+        min-width: 60em;
+        min-height: 30em;
+        border: solid 0.1em;
+      }
+      .flexCol, .lm_content {
+        /* Forces Golden panes to act as flexboxes when needed */
+        display: flex;
+        flex-direction: column;
+      }
+      .lm_content >:last-child {
+        flex: 1;
+      }
+      .flexRow {
+        display: flex;
+        flex-direction: row;
+      }
+      .flexRow * {
+        margin-left: 0.2em;
+        margin-right: 0.2em;
+        flex: 1;
+      }
+      /*
+      This shenaniganry (as well as making <body></body> a flexbox) is to account for the fact that
+      for some reason, appending Golden to a non-body element makes the height of the div 0
+      */
+      html {
+        height: 100vh;
+      }
+      body {
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    </style>
+    <div id="golden-base" style="flex: 1"></div>
   </body>
 </html>

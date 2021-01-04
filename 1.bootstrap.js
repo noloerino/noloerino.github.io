@@ -226,7 +226,7 @@ Object(duna_web__WEBPACK_IMPORTED_MODULE_0__["init"])();
 Object(_components_golden_jsx__WEBPACK_IMPORTED_MODULE_2__["goldenInit"])();
 var cm = new _components_codemirror__WEBPACK_IMPORTED_MODULE_1__["CodeMirrorWrapper"]();
 var simState = duna_web__WEBPACK_IMPORTED_MODULE_0__["SimState"]["new"]();
-console.log("You're running the duna simulator, version", "2c7caf4 (2020-12-27)");
+console.log("You're running the duna simulator, version", "b607561 (2021-01-03)");
 var assembleProgram = function () {
     var compileErrors = (document.getElementById("compile-errors"));
     var program = cm.getProgram();

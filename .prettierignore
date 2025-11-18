@@ -1,0 +1,10 @@
+build
+
+*.css
+*.txt
+.vite
+public
+.github
+package.json
+package-lock.json
+tsconfig.json

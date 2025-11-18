@@ -49,7 +49,7 @@ h3 {
   color: var(--blueish-gray);
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: var(--text-dark);
     background-color: var(--bg-dark);
